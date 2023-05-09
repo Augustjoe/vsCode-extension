@@ -14,10 +14,25 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-extension.componentsModule",
-        "title": "Hello World"
+        "command": "getFileState",
+        "title": "File State"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "getFileState",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "getFileState",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
