@@ -16,6 +16,11 @@
       {
         "command": "getFileState",
         "title": "File State"
+      },
+      {
+        "command": "vstodo.askQuestion",
+        "category": "VStodo",
+        "title": "askQuestion"
       }
     ],
     "menus": {

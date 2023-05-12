@@ -45,6 +45,18 @@ function activate(context: any) {
 
   // 将命令放入其上下文对象中，使其生效
   context.subscriptions.push(commandOfGetFileState);
+
+  // 绑定命令ID到处理函数。
+  vscode.commands.registerCommand("vstodo.askQuestion",()=>{
+    // 再vscode中显示消息
+    /* 
+      showInformationMessage(message: string, options?: vscode.MessageOptions | undefined, ...items: string[]): Thenable<string | undefined>
+      message：要显示的消息。
+options：可选的选项对象，用于指定消息的模式（例如，是否应该以模态方式显示消息）和其他选项。
+items：可选的数组，其中包含要在消息中显示的按钮标签。如果提供了按钮标签，则消息将以模态方式显示，并且用户可以选择其中一个按钮。如果未提供按钮标签，则消息将以非模态方式显示，并且用户无法关闭它。
+    */
+    vscode.window.showInformationMessage("how are you","good","bad")
+  })
 }
 
 function deactivate() {}
