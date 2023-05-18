@@ -47,7 +47,7 @@ function activate(context: any) {
   context.subscriptions.push(commandOfGetFileState);
 
   // 绑定命令ID到处理函数。
-  vscode.commands.registerCommand("vstodo.askQuestion",()=>{
+  vscode.commands.registerCommand("vstodo.askQuestion",async ()=>{
     // 再vscode中显示消息
     /* 
       showInformationMessage(message: string, options?: vscode.MessageOptions | undefined, ...items: string[]): Thenable<string | undefined>
@@ -55,7 +55,12 @@ function activate(context: any) {
 options：可选的选项对象，用于指定消息的模式（例如，是否应该以模态方式显示消息）和其他选项。
 items：可选的数组，其中包含要在消息中显示的按钮标签。如果提供了按钮标签，则消息将以模态方式显示，并且用户可以选择其中一个按钮。如果未提供按钮标签，则消息将以非模态方式显示，并且用户无法关闭它。
     */
-    vscode.window.showInformationMessage("how are you","good","bad")
+  // 获取回答 
+  const answer =  await vscode.window.showInformationMessage("how are you","good","bad");
+  // 可在调试输出控制台查看输出的内容
+  console.log( answer +'day');      
+    
+
   })
 }
 
