@@ -1,7 +1,10 @@
-const vscode = require("vscode");
+import { helloWorldPanel } from "./helloWorldPanel";
+import * as vscode from 'vscode'
+
+// const vscode = require("vscode");
 const fs = require("fs");
 
-function activate(context: any) {
+function activate(context: vscode.ExtensionContext) {
   console.log("插件已经被激活");
 
   // 注册命令
@@ -48,6 +51,7 @@ function activate(context: any) {
 
   // 绑定命令ID到处理函数。
   vscode.commands.registerCommand("vstodo.askQuestion",async ()=>{
+    console.log(23)
     // 再vscode中显示消息
     /* 
       showInformationMessage(message: string, options?: vscode.MessageOptions | undefined, ...items: string[]): Thenable<string | undefined>
@@ -61,6 +65,11 @@ items：可选的数组，其中包含要在消息中显示的按钮标签。如
   console.log( answer +'day');      
     
 
+  })
+
+  vscode.commands.registerCommand('vstodo.halloWord',()=>{
+    console.log(1122)
+    helloWorldPanel.createOrShow(context.extensionUri)
   })
 }
 

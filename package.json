@@ -21,6 +21,10 @@
         "command": "vstodo.askQuestion",
         "category": "VStodo",
         "title": "askQuestion"
+      },
+      {
+        "command": "vstodo.halloWord",
+        "title": "halloWord"
       }
     ],
     "menus": {
